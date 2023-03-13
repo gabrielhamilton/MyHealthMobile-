@@ -1,4 +1,4 @@
-# MyHealthMobile-
+# MyHealthMobile
 Projeto MyHealth Mobile 
 ## Os requisitos desta aplicação são:
 - Cadastro de usuários: cada usuário poderá realizar o controle das vacinas de apenas uma pessoa;
