@@ -15,14 +15,14 @@ const Login = (props) => {
         console.log('Entrou')
     })
     //logica botoes 
-    const auth = () => {
+    const UserAuthentication = () => {
         props.navigation.navigate('inicial')
     }
     const criarConta = () => {
         props.navigation.navigate('cadastro')
     }
     const forgotpassword = () => {
-        props.navigation.navigate ('recsenha')
+        props.navigation.push('recSenha')
     }
 
     return(
@@ -63,13 +63,13 @@ const Login = (props) => {
                     </View>
                     <View style={styles.buttons}>
                         <View style={styles.enterbutton}>
-                            <Button title="Entrar" onPress={auth} color="#37BD6D"/>
+                            <Button title="Entrar" onPress={UserAuthentication} color="#37BD6D"/>
                         </View>
                         <View style={styles.criarbutton}>
                             <Button title="Criar minha Conta" onPress={criarConta} color="#419ED7"/>
                         </View>
                         <View style={styles.esquecibutton}>
-                            <Button title="Esqueci minha senha" onPress={forgotpassword } color="#B0CCDE"/>
+                            <Button title="Esqueci minha senha" onPress={forgotpassword} color="#B0CCDE"/>
                         </View>
                     </View>
                 </View>

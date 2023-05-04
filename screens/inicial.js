@@ -1,13 +1,18 @@
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import {  Image } from 'react-native'
+import { createDrawerNavigator, DrawerItem } from '@react-navigation/drawer'
+import {  Image, StyleSheet } from 'react-native'
 import Vacinas from './vacinas' //tela inicial minhas vacinas 
-import ProxVacinas from '.proximasvacinas' // próximas vacinas 
+import ProxVacinas from './proximasvacinas' // próximas vacinas 
+import CustonDrawer from '../components/custonDrawer'
 
 const Drawer = createDrawerNavigator()
 
 const Inicial = (props) => {
     return(
-        <Drawer.Navigator>
+        <Drawer.Navigator drawerContent={(props) => <CustonDrawer {...props}/>}
+        screenOption={{
+            drawerActiveTintColor: '#FFFFFF'
+            }}
+        >
             <Drawer.screen name='Vacinas' component={Vacinas}/>
             <Drawer.screen name='Vacinas' component={Vacinas}/>
             <Drawer.screen name='ProxVacinas' component={ProxVacinas}
