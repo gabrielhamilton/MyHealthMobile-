@@ -3,6 +3,12 @@ import {View, Text, StyleSheet, Image } from "react-native";
 
 
 const CustonDrawer = (props) => {
+
+    const logout = () =>{
+        console.log('Saindo...')
+        props.navigation.pop()
+    }
+
     return(
         <DrawerContentScrollView {...props}>
             <View style={styles.view}>
@@ -10,6 +16,12 @@ const CustonDrawer = (props) => {
             </View>
             <View style={styles.traco}/>
             <DrawerItemList {...props} />
+            <DrawerItem label="Sair" labelStyle={{color:'#419ED7', fontFamily: 'AveriaLibre-Bold', fontSize: 15}}  onPress={logout}
+                
+                icon={ () => (
+                     <Image style={styles.imagem} source={require('../images/sair.png')}/>   
+                )}
+            />
         </DrawerContentScrollView>
     )
 }

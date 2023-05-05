@@ -7,26 +7,21 @@ import CustonDrawer from '../components/custonDrawer'
 const Drawer = createDrawerNavigator()
 
 const Inicial = (props) => {
+
     return(
         <Drawer.Navigator drawerContent={(props) => <CustonDrawer {...props}/>}
         screenOption={{
             drawerActiveTintColor: '#FFFFFF'
             }}
         >
-            <Drawer.screen name='Vacinas' component={Vacinas}/>
-            <Drawer.screen name='Vacinas' component={Vacinas}/>
-            <Drawer.screen name='ProxVacinas' component={ProxVacinas}
-            option={{
-            title:'Proximas Vacinas',
-            drawerIcon: () => (
+            <Drawer.Screen name='Vacinas' component={Vacinas}/>
+            <Drawer.Screen name='ProximasVacinas' component={ProxVacinas}/>
+            <Drawer.Screen 
+            name='ProxVacinas' 
+            component={ProxVacinas}
+            option={{title:'Proximas Vacinas',drawerIcon: () => (
                 <Image style={{width: 20, height: 20, marginRight: -25}} source={require('../images/calendario.png')}/>
-                              )}}/>
-            <DrawerItem label="Sair" labelStyle={{color:'#419ED7', fontFamily: 'AveriaLibre-Bold', fontSize: 15}}  onPress={logout}
-                
-                icon={ () => (
-                     <Image style={styles.imagem} source={require('../images/sair.png')}/>   
-                )}
-            />
+            )}}/>
         </Drawer.Navigator>
         )
     }
